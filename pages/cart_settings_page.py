@@ -10,6 +10,16 @@ class CartSettingsPage(BasePage):
 	url = 'https://www.sagemember.com/sgadmin.exe/Settings?Pg=CartSettings&UID=83451'
 
 	@property
+	def code_input(self):
+		locator = Locator(By.XPATH, "//input[@name='AddPCCode']")
+		return BaseElement(self.driver, locator=locator)
+
+	@property
+	def discount_input(self):
+		locator = Locator(By.XPATH, "//input[@name='AddPCPercentOff']")
+		return BaseElement(self.driver, locator=locator)
+
+	@property
 	def code_no_limit(self):
 		locator = Locator(By.XPATH, "//input[@name='AddPCReuseSetting'][@value='0']")
 		return BaseElement(self.driver, locator=locator)
